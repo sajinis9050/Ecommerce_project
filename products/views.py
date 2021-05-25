@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Product, Offer
+from .models import Product, Offer, Home
 
 
 def index(request):
@@ -11,6 +11,11 @@ def index(request):
 def index2(request):
     offers = Offer.objects.all()
     return render(request, 'index2.html', {'offers': offers})
+
+
+def index3(request):
+    home = Home.objects.all()
+    return render(request, 'index3.html', {'home': home})
 
 
 def new(request):
